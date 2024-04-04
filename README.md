@@ -26,13 +26,25 @@ Once that install, close and reopen the command prompt and then move to the dire
 
 ## The Dev Server
 
+> [!NOTE]  
+> This repository is only the front end for music box. If you want to run simulations and plot results, you have **two** options for connecting to the API server. You can [clone and run the api server](https://github.com/NCAR/music-box-interactive-api), or you can change the `.env.development` files value of `VITE_API_URL` to `'https://musicbox.acom.ucar.edu/musicbox'` which will allow you to use the deployed version of the API server.
+
+### Install dependencies
 ```
 npm install
+```
+
+### React webapp
+
+```
 npm run dev
 ```
 
-> [!NOTE]  
-> This repository is only the front end for music box. If you want to run simulations and plot results, you have **two** options for connecting to the API server. You can [clone and run the api server](https://github.com/NCAR/music-box-interactive-api), or you can change the `.env.development` files value of `VITE_API_URL` to `'https://musicbox.acom.ucar.edu/musicbox'` which will allow you to use the deployed version of the API server.
+### Electron app
+
+```
+npm run e:start
+```
 
 ## Testing a production build before deploying
 
@@ -40,9 +52,14 @@ We use feature flags to turn features on and off. You can change the values in t
 
 To do so, run
 
+### React webapp
 ```
 npm run build
 npm run preview
+```
+### Electron app
+```
+npm run make
 ```
 
 Vite will build the files and then serve them as if this were a production build
